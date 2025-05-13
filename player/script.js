@@ -1,5 +1,5 @@
 			
-const buttonStart = document.getElementById("startButton");
+const buttonStart = document.getElementById("start-button");
 
 function startTone() {
     buttonStart.disabled = "true";

@@ -6,27 +6,27 @@ function startTone() {
 	Tone.start().then(() => { 
         console.log("audio is ready"); 
         buttonStart.style.display = "none";
+        //StartPlayer();
     }).catch((error) => { 
         console.log("audio not ready"); 
         buttonStart.disabled = "false"; 
     });
 }
 
-const synth = new Tone.Synth({
-    oscillator: {
-        type: "amtriangle",
-        harmonicity: 0.5,
-        modulationType: "sine",
-    },
-    envelope: {
-        attackCurve: "exponential",
-        attack: 0.05,
-        decay: 0.2,
-        sustain: 0.2,
-        release: 1.5,
-    },
-    portamento: 0.05,
-}).toDestination();
+const sampler = new Tone.Sampler({
+				urls: {
+					C2: "C2.mp3",
+					"D#2": "Ds2.mp3",
+					"F#2": "Fs2.mp3",
+					A2: "A2.mp3",
+					C3: "C3.mp3",
+					"D#3": "Ds3.mp3",
+					"F#3": "Fs3.mp3",
+					A3: "A3.mp3"
+				}, // you only need to pass minimum one note file and sampler can improvise the rest, but its good to have a few spread across octaves. 
+				release: 1,
+				baseUrl: "https://tonejs.github.io/audio/salamander/",
+			}).toDestination();
 
 let keys = ["C3", "D3", "E3", "F3", "G3", "A3", "B3", "C4"];
 keys.forEach((key) => {
@@ -42,17 +42,5 @@ keys.forEach((key) => {
 });
 
 function onKeyPressed(eventData) {
-    //if (Tone.context.state != "running") { startTone(); return; } 
-    let octave = 3;
-    synth.triggerAttackRelease(eventData.target.getAttribute("note") + octave.toString(), "4n");
+    sampler.triggerAttackRelease(eventData.target.getAttribute("note"), "4n");
 }
-
-/*
-function onKeyDown(eventData) {
-    synth.triggerAttack(eventData.target.getAttribute("note"));
-}
-
-function onKeyUp(eventData) {
-    synth.triggerRelease();
-}
-*/

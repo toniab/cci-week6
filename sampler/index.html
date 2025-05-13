@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+
+    <meta charset="utf-8" />
+
+    <title>Hello Tone</title>
+
+    <!-- The website stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Tone.js Library -->
+    <script src="https://unpkg.com/tone"></script>
+
+    <!-- The website JavaScript file -->
+    <script src="script.js" defer></script>
+
+  </head>
+	<body>
+
+			<div class="explanation">
+						<a
+				href="https://tonejs.github.io/docs/latest/classes/Sampler"
+				target="_blank"
+				>Tone.Sampler</a
+			>
+			makes it easy to create an instrument from audio samples. Pass
+			in an object which maps the note's pitch or midi value to the
+			url, then you can trigger the attack and release of that note
+			like other instruments. By automatically repitching the samples,
+			it is possible to play pitches which were not explicitly
+			included which can save loading time.
+			</div>
+
+			<button id="start-button" onclick="startTone()">Start Tone.js</button>
+			<div id="content">
+				
+			</div>
+	</body>
+</html>

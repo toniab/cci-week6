@@ -18,21 +18,14 @@
   </head>
 	<body>
 			<div slot="explanation">
-				<a
-					href="https://tonejs.github.io/docs/latest/classes/Sampler"
-					target="_blank"
-					>Tone.Sampler</a
-				>
-				makes it easy to create an instrument from audio samples. Pass
-				in an object which maps the note's pitch or midi value to the
-				url, then you can trigger the attack and release of that note
-				like other instruments. By automatically repitching the samples,
-				it is possible to play pitches which were not explicitly
-				included which can save loading time.
+				Click on the button to play the audio file on loop using
+				<a href="https://tonejs.github.io/docs/latest/classes/Player"
+					>Tone.Player</a
+				>.
 			</div>
 
             <button id="startButton" onclick="startTone()">Start Tone.js</button>
-			<div id="content">
+			<div id="player-content">
 				<div>
 				<label for="volume">Volume:</label>
 				<input type="range" id="volume" min="-20" max="10" step="1" value="0">
@@ -57,5 +50,23 @@
 				<button id="playButton">Play</button>
 				</div>
             </div>
+
+			<div class="explanation">
+						<a
+				href="https://tonejs.github.io/docs/latest/classes/Sampler"
+				target="_blank"
+				>Tone.Sampler</a
+			>
+			makes it easy to create an instrument from audio samples. Pass
+			in an object which maps the note's pitch or midi value to the
+			url, then you can trigger the attack and release of that note
+			like other instruments. By automatically repitching the samples,
+			it is possible to play pitches which were not explicitly
+			included which can save loading time.
+			</div>
+
+			<div id="content">
+				
+			</div>
 	</body>
 </html>
