@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+
+    <meta charset="utf-8" />
+
+    <title>Hello Tone</title>
+
+    <!-- The website stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Tone.js Library -->
+    <script src="http://unpkg.com/tone"></script>
+
+    <!-- The website JavaScript file -->
+    <script src="script.js" defer></script>
+
+  </head>
+	<body>
+			<div slot="explanation">
+				<a
+					href="https://tonejs.github.io/docs/latest/classes/Synth"
+					target="_blank"
+					>Tone.Synth</a
+				>
+				is composed simply of a
+				<a
+					href="https://tonejs.github.io/docs/latest/classes/OmniOscillator"
+					target="_blank"
+					>Tone.OmniOscillator</a
+				>
+				routed through a
+				<a
+					href="https://tonejs.github.io/docs/latest/classes/AmplitudeEnvelope"
+					target="_blank"
+					>Tone.AmplitudeEnvelope</a
+				>.
+			</div>
+
+            <button id="startButton" onclick="startTone()">Start Tone.js</button>
+			<div id="content">
+            </div>
+	</body>
+</html>

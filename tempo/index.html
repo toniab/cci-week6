@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+
+    <title>Hello Tone</title>
+
+    <!-- The website stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Tone.js Library -->
+    <script src="http://unpkg.com/tone"></script>
+
+    <!-- The website JavaScript file -->
+    <script src="script.js" defer></script>
+
+  </head>
+
+  <body>
+    <h1>Hello Tone</h1>
+    <button id="start" onclick="startTone()">Trigger Tone.start()</button>
+    <button id="pause" style="display:none;" onclick="pauseTransport()">Pause Transport</button>
+    <button id="play" style="display:none;" onclick="playTransport()">Play Transport</button>
+    <button id="note" style="display:none;" onclick="quantizeAndPlay()">Trigger Quantized Note</button>
+  </body>
+
+</html>

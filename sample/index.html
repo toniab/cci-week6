@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+
+    <meta charset="utf-8" />
+
+    <title>Hello Tone</title>
+
+    <!-- The website stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Tone.js Library -->
+    <script src="http://unpkg.com/tone"></script>
+
+    <!-- The website JavaScript file -->
+    <script src="script.js" defer></script>
+
+  </head>
+	<body>
+			<div slot="explanation">
+				<a
+					href="https://tonejs.github.io/docs/latest/classes/Sampler"
+					target="_blank"
+					>Tone.Sampler</a
+				>
+				makes it easy to create an instrument from audio samples. Pass
+				in an object which maps the note's pitch or midi value to the
+				url, then you can trigger the attack and release of that note
+				like other instruments. By automatically repitching the samples,
+				it is possible to play pitches which were not explicitly
+				included which can save loading time.
+			</div>
+
+            <button id="startButton" onclick="startTone()">Start Tone.js</button>
+			<div id="content">
+				<div>
+				<label for="volume">Volume:</label>
+				<input type="range" id="volume" min="-20" max="10" step="1" value="0">
+				</div>
+				<div>
+				<label for="loopStart">Loop Start (seconds):</label>
+				<input type="number" id="loopStart" min="0" step="0.1" value="0">
+				</div>
+				<div>
+				<label for="loopEnd">Loop End (seconds):</label>
+				<input type="number" id="loopEnd" min="0" step="0.1" value="1">
+				</div>
+				<div>
+				<label for="reverse">Reverse:</label>
+				<input type="checkbox" id="reverse">
+				</div>
+				<div>
+				<label for="playbackRate">Playback Rate:</label>
+				<input type="range" id="playbackRate" min="0.1" max="2" step="0.1" value="1">
+				</div>
+				<div>
+				<button id="playButton">Play</button>
+				</div>
+            </div>
+	</body>
+</html>

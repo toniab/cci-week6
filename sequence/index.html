@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+
+    <meta charset="utf-8" />
+
+    <title>Hello Tone</title>
+
+    <!-- The website stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Tone.js Library -->
+    <script src="http://unpkg.com/tone"></script>
+
+    <!-- The website JavaScript file -->
+    <script src="script.js" defer></script>
+
+  </head>
+	<body>
+			<div slot="explanation">
+<a
+					href="https://tonejs.github.io/docs/latest/functions/getTransport.html"
+					>Tone.Transport</a
+				>
+				is the application-wide timekeeper. Its clock source enables
+				sample-accurate scheduling as well as tempo-curves and
+				automation. This example uses Tone.Sequence to invoke a callback
+				every 16th note.
+			</div>
+
+            <button id="startButton" onclick="startTone()">Start Tone.js</button>
+			<div id="content">
+            </div>
+	</body>
+</html>
