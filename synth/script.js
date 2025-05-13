@@ -34,25 +34,21 @@ keys.forEach((key) => {
     button.classList.add("key");
     button.setAttribute("note", key);
     button.innerHTML = key;
-    button.addEventListener("click", onKeyPressed);
-    //button.addEventListener("mouseDown", onKeyDown);
-    //button.addEventListener("mouseUp", onKeyUp);
-    //button.addEventListener("mouseLeave", onKeyUp);
+    //button.addEventListener("click", onKeyPressed);
+    button.addEventListener("mousedown", onKeyDown);
+    button.addEventListener("mouseup", onKeyUp);
+    button.addEventListener("mouseleave", onKeyUp);
     document.getElementById("content").appendChild(button);
 });
 
 function onKeyPressed(eventData) {
-    //if (Tone.context.state != "running") { startTone(); return; } 
-    let octave = 3;
-    synth.triggerAttackRelease(eventData.target.getAttribute("note") + octave.toString(), "4n");
+    synth.triggerAttackRelease(eventData.target.getAttribute("note"), "4n");
 }
 
-/*
 function onKeyDown(eventData) {
     synth.triggerAttack(eventData.target.getAttribute("note"));
 }
 
-function onKeyUp(eventData) {
+function onKeyUp() { // Monophonic synths can only play one note at a time.
     synth.triggerRelease();
 }
-*/

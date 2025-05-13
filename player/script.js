@@ -64,3 +64,5 @@ playButton.addEventListener("click", () => {
         playButton.textContent = "Pause";
     }
 });
+
+

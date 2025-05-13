@@ -6,6 +6,7 @@ function startTone() {
 	Tone.start().then(() => { 
         console.log("audio is ready"); 
         buttonStart.style.display = "none";
+        Tone.Transport.start();
     }).catch((error) => { 
         console.log("audio not ready"); 
         buttonStart.disabled = "false"; 
@@ -28,31 +29,9 @@ const synth = new Tone.Synth({
     portamento: 0.05,
 }).toDestination();
 
-let keys = ["C3", "D3", "E3", "F3", "G3", "A3", "B3", "C4"];
-keys.forEach((key) => {
-    let button = document.createElement("button");
-    button.classList.add("key");
-    button.setAttribute("note", key);
-    button.innerHTML = key;
-    button.addEventListener("click", onKeyPressed);
-    //button.addEventListener("mouseDown", onKeyDown);
-    //button.addEventListener("mouseUp", onKeyUp);
-    //button.addEventListener("mouseLeave", onKeyUp);
-    document.getElementById("content").appendChild(button);
-});
+const sequence = new Tone.Sequence((time, note) => {
+    synth.triggerAttackRelease(note, 0.1, time);
+    // subdivisions are given as subarrays
+}, ["C4", ["E4", "D4", "E4"], "G4", ["A4", "G4"]])
+sequence.start(0);
 
-function onKeyPressed(eventData) {
-    //if (Tone.context.state != "running") { startTone(); return; } 
-    let octave = 3;
-    synth.triggerAttackRelease(eventData.target.getAttribute("note") + octave.toString(), "4n");
-}
-
-/*
-function onKeyDown(eventData) {
-    synth.triggerAttack(eventData.target.getAttribute("note"));
-}
-
-function onKeyUp(eventData) {
-    synth.triggerRelease();
-}
-*/
