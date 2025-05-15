@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+
+    <title>Hello Tone</title>
+
+    <!-- The website stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Tone.js Library -->
+    <script src="https://unpkg.com/tone"></script>
+
+    <!-- The website JavaScript file -->
+    <script src="script.js" defer></script>
+
+  </head>
+
+  <body>
+    <h1>Hello Tone</h1>
+    
+    <p>
+      <button id="start" onclick="startTone()">Trigger Tone.start()</button>
+      <br/>
+
+      <div id="crusher-toggle" class="effect-toggle"></div>
+      <label for="crusher-control">Bit Crusher (make it sound like an 8bit game!):</label>
+      <input type="range" id="crusher-control" min="1" max="16" step="1" value="8">
+      <span id="crusher-result"></span>
+
+      <br /><br />
+
+      <div id="cheby-toggle" class="effect-toggle"></div>
+      <label for="cheby-control">Cheby (odd and even numbers sound diff!):</label>
+      <input type="range" id="cheby-control" min="1" max="100" step="1" value="50">
+      <span id="cheby-result"></span>
+      
+      <br /><br />
+
+      <div id="distort-toggle" class="effect-toggle"></div>
+      <label for="distort-control">Distortion:</label>
+      <input type="range" id="distort-control" min="0" max="2" step=".1" value=".8">
+      <span id="distort-result"></span>
+
+      <br /><br />
+
+      <div id="feedbackDelay-toggle" class="effect-toggle"></div>
+      <label for="delay-control">FeedbackDelay.delay:</label>
+      <input type="range" id="delay-control" min="1" max="16" step="1" value="8">
+      <span id="delay-result"></span>
+      <label for="feedback-control">FeedbackDelay.feedback:</label>
+      <input type="range" id="feedback-control" min="0" max="1" step=".1" value=".5">
+      <span id="feedback-result"></span>
+    </p>
+  </body>
+
+</html>

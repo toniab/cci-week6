@@ -1,0 +1,10 @@
+.effect-toggle {
+    width: 2em;
+    height: 2em;
+    border: 2px solid black;
+    display: inline-block;
+}
+
+.effect-toggle.active {
+    background: black;
+}

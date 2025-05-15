@@ -61,7 +61,7 @@ buttonPlay.addEventListener("click", () => {
     player.start();
     buttonPlay.innerHTML = "Stop";
     let div = document.getElementById("clip-duration");
-    div.innerHTML = "Recorded " + player.buffer.duration + "s Loop";
+    div.innerHTML = "Recorded " + player.buffer.duration.toFixed(2) + "s Loop";
     loopEndControl.value = player.buffer.duration; // update UI so loopend shows the total time
   }
 });
