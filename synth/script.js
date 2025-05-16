@@ -27,6 +27,13 @@ const synth = new Tone.Synth({
     },
     portamento: 0.05,
 }).toDestination();
+synth.disconnect();
+
+let bitCrushEffect = new Tone.BitCrusher({
+	"bits": 2,
+    "wet": 0.5
+}).toDestination();
+synth.connect(bitCrushEffect);
 
 let keys = ["C3", "D3", "E3", "F3", "G3", "A3", "B3", "C4"];
 keys.forEach((key) => {
