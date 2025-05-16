@@ -36,18 +36,29 @@ function playSequence() {
 
 
 
-// OPTIONAL EFFECTS: To use one- put synth.connect() or player.connect() on one of these
+// OPTIONAL EFFECTS: 
+// To use one- put synth.connect() or player.connect() on one of these
+// To use multiple in specific order- put synth.chain(effect1, effect2, etc)
+// To remove synth.disconnect()
+
 // BIT CRUSHER
-const crusher = new Tone.BitCrusher(8).toDestination(); // https://en.wikipedia.org/wiki/Bitcrusher
+const crusher = new Tone.BitCrusher({
+	"bits": 8,
+    "wet": 0.5
+}).toDestination(); // https://en.wikipedia.org/wiki/Bitcrusher
+//synth.connect(crusher);
 
 // CHEBYSHEV
 let cheby = new Tone.Chebyshev(50).toDestination(); // http://music.columbia.edu/cmc/musicandcomputers/chapter4/04_06.php
+//synth.connect(cheby);
 
 // DISTORTION 
 let distort = new Tone.Distortion(0.8).toDestination(); // https://en.wikipedia.org/wiki/Distortion_(music
+//synth.connect(distort);
 
 // FEEDBACKDELAY
 const feedbackDelay = new Tone.FeedbackDelay("8n", 0.5).toDestination();
+//synth.connect(feedbackDelay);
 
 // PHASER
 const phaser = new Tone.Phaser({
@@ -55,30 +66,37 @@ const phaser = new Tone.Phaser({
     octaves: 5,
     baseFrequency: 1000
 }).toDestination();
+//synth.connect(phaser);
 
 // FREEVERB
 const freeverb = new Tone.Freeverb().toDestination();
 freeverb.dampening = 1000;
+//synth.connect(freeverb);
 
 // JCREVERB
 const reverb = new Tone.JCReverb(0.4).toDestination();
+//synth.connect(reverb);
 
 // PINGPONG DELAY
 const pingPong = new Tone.PingPongDelay("4n", 0.2).toDestination();
+//synth.connect(pingPong);
 
 // FREQ SHIFT
 const shift = new Tone.FrequencyShifter(42).toDestination();
+//synth.connect(shift);
 
 // AUTO WAH
 const autoWah = new Tone.AutoWah(50, 6, -30).toDestination();
 autoWah.Q.value = 6; // Q value influences the effect of the wah - default is 2
+//synth.connect(autoWah);
 
 // AUTO PANNER
 const autoPanner = new Tone.AutoPanner("4n").toDestination().start(); // create an autopanner and start its LFO
+//synth.connect(autoPanner);
 
 // TREMOLO
 const tremolo = new Tone.Tremolo(9, 0.75).toDestination().start(); // create a tremolo and start it's LFO
-
+//synth.connecT(tremolo);
 
 // --- HTML CONTROLS -- //
 
