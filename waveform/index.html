@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+
+    <meta charset="utf-8" />
+
+    <title>Hello Tone</title>
+
+    <!-- The website stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Tone.js Library -->
+    <script src="https://unpkg.com/tone"></script>
+
+    <!-- The website JavaScript file -->
+    <script src="script.js" defer></script>
+
+  </head>
+	<body>
+			<div slot="explanation">
+        <a
+					href="https://tonejs.github.io/docs/latest/classes/FFT"
+					target="_blank"
+					>Tone.FFT</a
+				>
+				returns the amplitude of the incoming signal at different
+				frequencies.
+				<a
+					href="https://tonejs.github.io/docs/latest/classes/Waveform"
+					target="_blank"
+					>Tone.Waveform</a
+				>
+				returns the signal value between 0-1.			
+      </div>
+<button id="start-button" onclick="startTone()">Start Tone.js</button>
+<p>Press "a" through "h" keyboard keys and open the JS console to see meter, waveform, and fft output data.</p>
+<p>Example Visualization: https://tonejs.github.io/examples/analysis</p>
+      <div id="content">
+      </div>
+	</body>
+</html>
