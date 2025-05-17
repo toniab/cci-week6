@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+
+    <meta charset="utf-8" />
+
+    <title>Hello Tone</title>
+
+    <!-- The website stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Tone.js Library -->
+    <script src="https://unpkg.com/tone"></script>
+
+    <!-- The website JavaScript file -->
+    <script src="script.js" defer></script>
+
+  </head>
+	<body>
+			<div slot="explanation">
+       Audio scheduling and rendering visuals should always be kept separate. Instead of triggering visuals from within a scheduled event callback, schedule a 'deferred' callback using Tone.Draw which will be invoked on an animation frame at the exact moment of the scheduled event.
+			 <br><br>
+			 For more information see <a href="https://github.com/Tonejs/Tone.js/wiki/Performance">this wiki article</a>. 
+			</div>
+
+      <button id="start-button" onclick="startTone()">Start Tone.js</button>
+						<div id="notes">
+				<div id="C4" class="note"></div>
+				<div id="E4" class="note"></div>
+				<div id="G4" class="note"></div>
+				<div id="B4" class="note"></div>
+				<div id="D5" class="note"></div>
+			</div>
+      <div id="content">
+      </div>
+	</body>
+</html>
