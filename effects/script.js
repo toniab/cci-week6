@@ -37,8 +37,10 @@ function playSequence() {
 
 
 // OPTIONAL EFFECTS: 
-// To use one- put synth.connect() or player.connect() on one of these
-// To use multiple in specific order- put synth.chain(effect1, effect2, etc)
+// To use one- 
+// use synth.connect() or player.connect() or sampler.connect() with one of the effects passed as the argument
+// To use multiple in specific order- 
+// put synth.chain(effect1, effect2, etc)
 // To remove synth.disconnect()
 
 // BIT CRUSHER
